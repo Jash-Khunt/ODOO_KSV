@@ -293,8 +293,8 @@ export const mapQuotation = (
 
 export const mapPO = (p: BackendPO): RichPO => ({
   id: p.po_number || String(p.id),
-  rfqId: "",
-  vendorId: "",
+  rfqId: String(p.rfq_id ?? ""),
+  vendorId: String(p.vendor_id ?? ""),
   poDate:
     String(p.created_at || "").slice(0, 10) ||
     new Date().toISOString().slice(0, 10),
