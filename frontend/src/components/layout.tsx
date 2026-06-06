@@ -2,7 +2,7 @@ import { useState, type ReactNode } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext";
 import { navForRole } from "../auth/nav";
-import { ROLE_LABEL } from "../data/mock";
+import { ROLE_LABEL } from "../utils";
 import fullLogo from "../assets/full-logo.png";
 
 export const PageFrame = ({ children }: { children: ReactNode }) => (
