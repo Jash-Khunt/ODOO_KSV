@@ -4,6 +4,7 @@ require('dotenv').config();
 
 const authRoutes = require('./routes/auth.routes');
 const authMiddleware = require('./middlewares/auth.middleware');
+const vendorRoutes = require('./routes/vendor.routes');
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use((err, req, res, next) => {
 });
 
 app.use('/api/auth', authRoutes);
+app.use('/api/vendors', authMiddleware, vendorRoutes);
 
 app.use((req, res) => {
   res.status(404).json({ message: 'Route not found' });
