@@ -7,6 +7,7 @@ const authMiddleware = require('./middlewares/auth.middleware');
 const vendorRoutes = require('./routes/vendor.routes');
 const rfqRoutes = require('./routes/rfq.routes');
 const quotationRoutes = require('./routes/quotation.routes');
+const approvalRoutes = require('./routes/approval.routes');
 
 
 const app = express();
@@ -25,6 +26,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/vendors', authMiddleware, vendorRoutes);
 app.use('/api/rfqs', authMiddleware, rfqRoutes);
 app.use('/api/quotations', authMiddleware, quotationRoutes);
+app.use('/api/approvals', authMiddleware, approvalRoutes);
 
 app.use((req, res) => {
   res.status(404).json({ message: 'Route not found' });
